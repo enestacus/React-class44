@@ -1,0 +1,51 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-list {
+  display: flex;
+  padding-left: 0;
+}
+
+.category-list li {
+  list-style: none;
+  margin-right: 10px;
+}
+
+.category-list li button {
+  padding: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  
+}
+
+.category-list li button:hover {
+  background-color: lightgray;
+} 
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  margin: 8px;
+  width: calc(25% - 16px);
+}
+
+.product-image {
+  height: 300px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.active-category button {
+  background-color: darkgray;
+}

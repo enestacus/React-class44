@@ -9,6 +9,7 @@ const Products = ({ selectedCategory }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        setLoading(true);
         const apiUrl = selectedCategory
           ? `https://fakestoreapi.com/products/category/${selectedCategory}`
           : `https://fakestoreapi.com/products`;
@@ -16,9 +17,9 @@ const Products = ({ selectedCategory }) => {
         const response = await fetch(apiUrl);
         const data = await response.json();
         setProducts(data);
-        setLoading(false);
       } catch (error) {
         setError(error);
+      } finally {
         setLoading(false);
       }
     };
@@ -31,7 +32,7 @@ const Products = ({ selectedCategory }) => {
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p>An error was encountered. Please try again later!</p>;
   }
 
   return (

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 const ProductInfo = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const ProductInfo = () => {
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p>An error was encountered. Please try again later!</p>;
   }
 
   if (!product) {
